@@ -14,6 +14,7 @@
   <li>However data pipelines are built also for real-time sources where target system requires constant data update <b>(stream processing)</b>.</li>
   <li>The example shows that ultimate destination of data pipelines doesn't have to be a data warehouse.</li>
   <li>Data pipeline can route the processed data into another applications like Tableu for building dashboards.</li>
+  <li>Once dashboard built, there is the Tableau option for sending it into server.</li>
 </ul>
 
 <h3>Tableau Dashboard</h3>
