@@ -1,5 +1,6 @@
 <h2>Data Pipeline: CSV -> Python -> Tableau -> Server</h2>
 <h3>Intro</h3>
+<img src="images/datapipeline.jpg">
 <ul>
   <li>CSV as dasta extracts from different systems.</li>
   <li>Python from ETL (extract, transform, load).</li>
