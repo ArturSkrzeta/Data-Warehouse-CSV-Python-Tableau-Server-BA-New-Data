@@ -7,8 +7,9 @@
   <li>Tableau for data visualization dasboards.</li>
   <li>Server to get dasboard published for stakeholders.</li>
 </ul>
-<h3>Demo with conculstions</h3>
+<h3>Demo with conclusions</h3>
 <ul>
+  <li>Python script combines flat files.</li>
   <li>In this case I use static source  which is CSV flat files <b>(batch processing)</b>.</li>
   <li>However data pipelines are built also for real-time sources where target system requires constant data update <b>(stream processing)</b>.</li>
   <li>The example shows that ultimate destination of data pipelines doesn't have to be a data warehouse.</li>
