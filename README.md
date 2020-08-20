@@ -13,3 +13,6 @@
   <li>The example shows that ultimate destination of data pipelines doesn't have to be a data warehouse.</li>
   <li>Data pipeline can route the processed data into another applications like Tableu for building dashboards.</li>
 </ul>
+
+<h3>Tableau Dashboard</h3>
+<img src="images/dashboard.JPG">
