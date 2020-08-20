@@ -10,6 +10,6 @@
 <ul>
   <li>In this case I use static source  which is CSV flat files <b>(batch processing)</b>.</li>
   <li>However data pipelines are built also for real-time sources where target system requires constant data update <b>(stream processing)</b>.</li>
-  <li>The example show that ultimate destination of data pipelines doesn't have to be a data warehouse.</li>
+  <li>The example shows that ultimate destination of data pipelines doesn't have to be a data warehouse.</li>
   <li>Data pipeline can route the processed data into another applications like Tableu for building dashboards.</li>
 </ul>
