@@ -3,7 +3,7 @@
 <img src="images/datapipeline.jpg">
 <ul>
   <li>CSV as dasta extracts from different systems.</li>
-  <li>Python from ETL (extract, transform, load).</li>
+  <li>Python for ETL (extract, transform, load).</li>
   <li>Tableau for data visualization dasboards.</li>
   <li>Server to get dasboard published for stakeholders.</li>
 </ul>
