@@ -28,7 +28,7 @@ def main():
     combined['alert'] = combined['amount'].map(lambda x: 'Yes' if x < -9000 else 'No')
 
     # load
-    combined.to_csv('data.csv')
+    combined.to_csv('data.csv', index = False)
 
 if __name__ == '__main__':
     main()
