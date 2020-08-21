@@ -39,4 +39,3 @@ id,transaction_id,amount,currency,time,verified,deleted,last_update,payer_name,c
 38,88fe4a42-de39-40fb-8ef2-a0dba064caa7,-557.53,USD,13/8/2020,FALSE,FALSE,None,76ecfbb9-d5a2,Spain
 39,4ba307c2-a260-4b01-9fb9-97fd7b2c0cb2,953.23,PLN,13/8/2020,FALSE,FALSE,None,7f68969d-0be3,Austria
 40,e5b30841-d5e2-4d53-8123-4f4df5f861ff,-8752.01,PLN,13/8/2020,FALSE,FALSE,None,5e70fd60-00f2,UK
-41,0399707d-1d8d-42b0-97e5-333aec17b952,-1824.03,USD,13/8/2020,FALSE,FALSE,None,7e7d2f5a-bc06,France
