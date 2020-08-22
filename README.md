@@ -19,6 +19,10 @@
   <li>The example shows that ultimate destination of data pipelines doesn't have to be a data warehouse.</li>
   <li>Data pipeline can route the processed data into another applications like Tableu for building dashboards.</li>
   <li>Once dashboard built, there is the Tableau option for sending it into server.</li>
+  <li>Once published, we can perfrom Business Analysis</li>
+  <li>Making decisions based on BA leads to process improvements</li>
+  <li>Process improvements generates new data that can undergo the Data Lake all over again.</li>
+  <li>Data Lake is a great tool for monitoring business processes and continuous improvement impementation.</li>
 </ul>
 
 <h3>Tableau Dashboard</h3>
