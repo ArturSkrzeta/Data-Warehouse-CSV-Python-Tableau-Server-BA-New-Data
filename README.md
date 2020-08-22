@@ -31,5 +31,9 @@
 <h3>Business Analysis</h3>
 <ul>
   <li>Taking conclusions from the analysis that can improve business perfomance.</li>
-  <li>Based on the Tableau dashboard</li>
+  <li>Conclusions based on the Tableau dashboard:</li>
+    <ul>
+      <li>Only one country has positive cashflow as opposed to other countries. That means clients form Italy pay the money into their accounts.</li>
+      <li>...</li>
+    </ul>
 <ul>
