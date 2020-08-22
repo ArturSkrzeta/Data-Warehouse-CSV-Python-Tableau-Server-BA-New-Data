@@ -1,4 +1,4 @@
-<h2>Data Pipeline: CSV -> Python -> Tableau -> Server</h2>
+<h2>Data Lakes: CSV flat files -> Python -> Tableau -> Server -> Business Analysis -> New data coming in --> CSV fieles and so on..</h2>
 <h3>Intro</h3>
 <img src="images/datapipeline.jpg">
 <ul>
