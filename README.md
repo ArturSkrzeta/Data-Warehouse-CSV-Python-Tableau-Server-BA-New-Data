@@ -1,12 +1,16 @@
 <h2>Data Lakes: CSV flat files -> Python -> Tableau -> Server -> Business Analysis -> New data coming in --> CSV fieles and so on..</h2>
 <h3>Intro</h3>
 <img src="images/datapipeline.jpg">
-<ul>
-  <li>CSV as dasta extracts from different systems.</li>
-  <li>Python for ETL (extract, transform, load).</li>
-  <li>Tableau for data visualization dasboards.</li>
-  <li>Server to get dasboard published for stakeholders.</li>
-</ul>
+<h2>Data Lake consists of following steps:</h2>
+<ol>
+  <li>CSV as dasta extracts from different systems,</li>
+  <li>Python for ETL (extract, transform, load),</li>
+  <li>Tableau for data visualization dasboards,</li>
+  <li>Server to get dasboard published for stakeholders,</li>
+  <li>Busines Analysis,</li>
+  <li>New data coming in from systems to storage,</li>
+  <li>Go to step 1.</li>
+</ol>
 <h3>Demo with conclusions</h3>
 <ul>
   <li>Python script combines flat files into one Tableau input.</li>
