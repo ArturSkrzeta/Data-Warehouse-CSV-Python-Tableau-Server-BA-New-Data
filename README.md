@@ -27,3 +27,9 @@
 
 <h3>Tableau Dashboard</h3>
 <img src="images/dashboard.JPG">
+
+<h3>Business Analysis</h3>
+<ul>
+  <li>Taking conclusions from the analysis that can improve business perfomance.</li>
+  <li>Based on the Tableau dashboard</li>
+<ul>
