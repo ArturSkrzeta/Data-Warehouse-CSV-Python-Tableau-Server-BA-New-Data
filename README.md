@@ -27,7 +27,9 @@
 
 <h3>Tableau Dashboard</h3>
 <img src="images/dashboard.JPG">
-
+<br>
+<br>
+<img src="images/dashboard2.JPG">
 <h3>Business Analysis</h3>
 <ul>
   <li>Taking conclusions from the analysis that can improve business perfomance.</li>
