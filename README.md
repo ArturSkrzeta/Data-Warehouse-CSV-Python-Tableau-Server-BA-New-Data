@@ -1,7 +1,7 @@
-<h2>Data Lakes: CSV flat files -> Python -> Tableau -> Server -> Business Analysis -> New data</h2>
+<h2>Data Warehouse: CSV flat files -> Python -> Tableau -> Server -> Business Analysis -> New data</h2>
 <h3>Intro</h3>
 <img src="images/datapipeline.jpg">
-<h3>Data Lake consists of following steps:</h3>
+<h3>Data Warehousing consists of following steps:</h3>
 <ol>
   <li>CSV as dasta extracts from different systems,</li>
   <li>Python for ETL (extract, transform, load),</li>
@@ -21,8 +21,8 @@
   <li>Once dashboard built, there is the Tableau option for sending it into server.</li>
   <li>Once published, we can perfrom Business Analysis</li>
   <li>Making decisions based on BA leads to process improvements</li>
-  <li>Process improvements generates new data that can undergo the Data Lake all over again.</li>
-  <li>Data Lake is a great tool for monitoring business processes and continuous improvement impementation.</li>
+  <li>Process improvements generates new data that can undergo the Data Warehousing process all over again.</li>
+  <li>Data Warehouse is a great tool for monitoring business processes and continuous improvement impementation.</li>
 </ul>
 
 <h3>Tableau Dashboard</h3>
