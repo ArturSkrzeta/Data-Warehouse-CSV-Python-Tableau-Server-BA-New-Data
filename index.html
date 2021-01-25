@@ -63,14 +63,137 @@
 											<li>It can be defined as <b><i>a repeatable programmed data movement</i></b>.</li>
 											<li>It stands for:
 												<br>
-												- extract: getting data from different sources.<br>
-												- transform: filter/map/enrich/combine/validate/sort/...<br>
-												- load: store data in the data warehouse or data mart.
+												- <b>extract</b>: getting data from different sources.<br>
+												- <b>transform</b>: filter/map/enrich/combine/validate/sort/...<br>
+												- <b>load</b>: store data in the data warehouse or data mart.
 											</li>
 											<li>Data Warehouse (DW) vs Data Mart (DM):
 												<br>
-												- DW is broadly focused all the departments. It is possible that it can even represent the entire company.<br>
+												- DW is broadly focused on all the departments. It is possible that it can even represent the entire company.<br>
 												- DM is a specific business subject-oriented, and it is used at a department level.
+											</li>
+										</ul>
+
+										<h5>Fact Table and Dimension Table:</h5>
+										<ul>
+											<li>Fact table is a central table of the <b>star schema</b> in a data warehouse. It stores quantitative information for the analysis.</li>
+											<li>Fact table being kept denormalized in order to combine multiple tables into one so that it can be queried quickly.</li>
+											<li>A fact table works with dimension tables.
+													While the fact table holds the data to be analyzed, the dimension table stores data about the ways in which the data in the fact table can be analyzed.
+											</li>
+											<li>Thus, the fact table consists of two types of columns:
+												<br>
+												- foreign key columns that joins dimension tables (Time ID,	Product ID,	Customer ID),<br>
+												- measure columns containing quantitative data being analyzed (Unit Sold).
+											</li>
+											<li>Fact table:
+												<br>
+												<span style="font-size:12px;">source: searchdatamanagement.techtarget.com</span>
+												<table>
+												 <tbody>
+												  <tr>
+												   <td>Time ID</td>
+												   <td>Product ID</td>
+												   <td>Customer ID</td>
+												   <td>Unit Sold</td>
+												  </tr>
+												  <tr>
+												   <td>4</td>
+												   <td>17</td>
+												   <td>2</td>
+												   <td>1</td>
+												  </tr>
+												  <tr>
+												   <td>8</td>
+												   <td>21</td>
+												   <td>3</td>
+												   <td>2</td>
+												  </tr>
+												  <tr>
+												   <td>8</td>
+												   <td>4</td>
+												   <td>1</td>
+												   <td>1</td>
+												  </tr>
+												 </tbody>
+												</table>
+											</li>
+											<li>Dimension table:
+												<br>
+												<span style="font-size:12px;">source: searchdatamanagement.techtarget.com</span>
+												<table>
+												 <tbody>
+												  <tr>
+												   <td>Customer ID</td>
+												   <td>Name</td>
+												   <td>Gender</td>
+												   <td>Income</td>
+												   <td>Education</td>
+												   <td>Region</td>
+												  </tr>
+												  <tr>
+												   <td>1</td>
+												   <td>Brian Edge</td>
+												   <td>M</td>
+												   <td>2</td>
+												   <td>3</td>
+												   <td>4</td>
+												  </tr>
+												  <tr>
+												   <td>2</td>
+												   <td>Fred Smith</td>
+												   <td>M</td>
+												   <td>3</td>
+												   <td>5</td>
+												   <td>1</td>
+												  </tr>
+												  <tr>
+												   <td>3</td>
+												   <td>Sally Jones</td>
+												   <td>F</td>
+												   <td>1</td>
+												   <td>7</td>
+												   <td>3</td>
+												  </tr>
+												 </tbody>
+												</table>
+											</li>
+											<li>In the above example, the customer ID column in the fact table is the foreign key that joins with the dimension table. Let's have a look at fact table's second row:
+												<br>
+												-  row 2 of the fact table records the fact that customer 3, Sally Jones, bought two items on day 8.<br>
+											</li>
+											<li>We can put table structure through:
+												<br><br>
+												<table>
+													<thead>
+														<tr>
+															<th>Normalization</th>
+															<th>Denormaliaztion</th>
+														</tr>
+													</thead>
+													<tbody>
+														<tr>
+															<td>Used to remove redundant data.</td>
+															<td>Used to combine multiple tables for quick querying.</td>
+														</tr>
+														<tr>
+															<td>Focuses on clearing the database from unused data.</td>
+															<td>Focuses on achieving the faster execution.</td>
+														</tr>
+														<tr>
+															<td>Uses optimized memory.</td>
+															<td>Causes some sort of wastage of memory.</td>
+														</tr>
+														<tr>
+															<td>Used where number of insert/update/delete operations are performed and joins of those tables are not expensive.</td>
+															<td>Used where joins are expensive and frequent query is executed on the tables.</td>
+														</tr>
+														<tr>
+															<td>Ensures data integrity i.e. any addition or deletion of data from the table will not create any mismatch in the relationship of the tables.</td>
+															<td>Doesn't ensure data integrity.</td>
+														</tr>
+													</tbody>
+												</table>
 											</li>
 										</ul>
 
