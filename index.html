@@ -78,7 +78,20 @@
 										<ul>
 											<li>Fact table is a central table of the <b>star schema</b> in a data warehouse. It stores quantitative information for the analysis.</li>
 											<li>Fact table being kept denormalized in order to combine multiple tables into one so that it can be queried quickly.</li>
-											<li>A fact table works with dimension tables.
+											<li>A fact is every event that can undergo analysis.
+													Facts have dimensions for instance a transaction (fact) may have 2 dimensions (value, units sold) - numerical or boolean.
+											</li>
+											<li>Here is how we can visualize the dependecy between facts and dimensions:
+<!-- start -->
+<pre>
+SELECT name
+FROM employees
+WHERE salary > 10000
+</pre>
+<!-- stop -->
+												- <code>name</code> is one of facts and <code>salary</code> is one of the dimensions.
+											</li>
+											<li>Thus, a fact table works with dimension tables.
 													While the fact table holds the data to be analyzed, the dimension table stores data about the ways in which the data in the fact table can be analyzed.
 											</li>
 											<li>Thus, the fact table consists of two types of columns:
@@ -194,6 +207,23 @@
 														</tr>
 													</tbody>
 												</table>
+											</li>
+										</ul>
+
+										<h5>Columnar databae:</h5>
+										<ul>
+											<li>In relational databases, tables are defined as an unordered collection of rows.</li>
+											<li>However columnar database sotre data in columnar sequence instead of row's.</li>
+											<li>
+<!-- start -->
+<pre>
+rowid		NrPrac			Imie	 	Nazwisko		Pensja
+001 		10 			Alicja 		Zielinska		5200
+002 		11 			Bogdan 		Wrona			4900
+003 		12			Czesław 	Kowalski 		5600
+004 		114			Dominik 	Wrona 			5200
+</pre>
+<!-- stop -->
 											</li>
 										</ul>
 
