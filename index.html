@@ -279,6 +279,80 @@ Zielinska:001; Wrona:002,004; Kowalski:003;
 											</li>
 										</ul>
 
+										<h5>Query optimalization:</h5>
+										<ul>
+											<li>DWH is espacially optimized for reading operations.</li>
+											<li>To keep high level of optimalizaton we should be avoiding performing one operation many times but we want to redefine query to run it only once instead.</li>
+											<li>Here is unefficeint way to query with WHERE clause:
+<!-- start -->
+<pre>
+SELECT ...
+FROM ...
+WHERE X AND P1
+
+SELECT ...
+FROM ...
+WHERE X AND P2
+
+........................
+
+SELECT ...
+FROM ...
+WHERE X AND Pn
+</pre>
+<!-- end -->
+												- as we can see X condition repeateas itself many times in WHERE clause,<br>
+												- we can take condition X as general condition put on the data,<br>
+												- applying that X condition reduces data set into a smaller sub-set,<br>
+												- instead of putting X condtion with every select we can put it once in the <b>materialized view</b>:<br>
+<!-- start -->
+<pre>
+CREATE MATERIALIZED VIEW my_mat_viwe AS
+SELECT ...
+FROM ...
+WHERE X
+</pre>
+<!-- end -->
+												- we obtain subset resulting from filtering data set into sub-set that is in line with X condition,<br>
+												- we can then proceed with further variable conditions: P1, P2, Pn:
+<!-- start -->
+<pre>
+SELECT ...
+FROM my_mat_viwe
+WHERE P1
+
+SELECT ...
+FROM my_mat_viwe
+WHERE P2
+
+........................
+
+SELECT ...
+FROM my_mat_viwe
+WHERE Pn;
+</pre>
+<!-- end -->
+												- the main difference between a materialized view and a regular view:
+												<table>
+													<thead>
+														<tr>
+															<td>Materialized view</td>
+															<td>Regular view</td>
+														</tr>
+													</thead>
+													<tbody>
+														<tr>
+															<td>When calling, it references to outcome is physically saved in the system.</td>
+															<td>When calling, it performs hidden query execution.</td>
+														</tr>
+														<tr>
+															<td>It's getting refreshed automtically.</td>
+															<td>There is no automated refreshing.</td>
+														</tr>
+													</tbody>
+												</table>
+											</li>
+										</ul>
 
 									</header>
 								</div>
