@@ -64,7 +64,7 @@
 											<li>It stands for:
 												<br>
 												- <b>extract</b>: getting data from different sources.<br>
-												- <b>transform</b>: filter/map/enrich/combine/validate/sort/applying business rules to the data<br>
+												- <b>transform</b>: filter/map/enrich/combine/validate/aggregate/sort/applying business rules to the data<br>
 												- <b>load</b>: store data in the data warehouse or data mart.
 											</li>
 											<li>Data Warehouse (DW) vs Data Mart (DM):
@@ -177,7 +177,7 @@ WHERE salary > 10000
 												 </tbody>
 												</table>
 											</li>
-											<li>In the above example, the customer ID column in the fact table is the foreign key that joins with the dimension table. Let's have a look at fact table's second row:
+											<li>In the above example, the customer ID column, in the fact table, is the foreign key that joins with the dimension table. Let's have a look at fact table's 2nd row:
 												<br>
 												-  row 2 of the fact table records the fact that customer 3, Sally Jones, bought two items on day 8.<br>
 											</li>
@@ -231,7 +231,7 @@ rowid		NrPrac		Imie	 	Nazwisko	Pensja
 </pre>
 <!-- stop -->
 												<span style="font-size:12px;">source: if.uj.edu.pl</span><br>
-												- in columnar store, above data looks like:
+												- in columnar store, above data looks like following:
 <!-- start -->
 <pre>
 10:001; 11:002; 12:003; 114:004;
@@ -253,6 +253,32 @@ Zielinska:001; Wrona:002,004; Kowalski:003;
 											</li>
 											<li>Becasue fact tables in data warehouses are often long (many rows) and wide (many columns) and their data doesn't change while OLAP, they are being stored in columnar form.</li>
 										</ul>
+
+										<h5>Data Warehous (DWH) desing:</h5>
+										<ul>
+											<li>Designing DWH we need to pay closer attention on business requirements of further reporting.</li>
+											<li>Data dimensions and granuality of data needs to be adjusted to reports that will be issuing based on the DWH.</li>
+											<li>Dimensions needs to follow granuality, no the other way around.</li>
+										</ul>
+
+										<h5>DWH working modes:</h5>
+										<ul>
+											<li>Operational or analytical mode:
+												<br>
+												- operations limited only to analytical queries,<br>
+												- no for any data or table schemas modifications,<br>
+												-	data in DWH stays unchanged.
+											</li>
+											<li>Modification mode:
+												<br>
+												- authorized users ingest the data into DWH,<br>
+												- it can be done automatically on specific time,<br>
+												- there can be also actualization of indexes perfomed,<br>
+												- analytical users loses connection at time of DWH modificaiton,<br>
+												- any schamas modification may pose a danger for any predefiend queries and report.
+											</li>
+										</ul>
+
 
 									</header>
 								</div>
