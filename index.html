@@ -85,27 +85,27 @@
 											<li>Fact table is a central table of the <b>star schema</b> in a data warehouse. It stores quantitative information for the analysis.</li>
 											<li>Fact table being kept denormalized in order to combine multiple tables into one so that it can be queried quickly.</li>
 											<li>A fact is every event that can undergo analysis.
-													Facts have dimensions for instance a transaction (fact) may have 2 dimensions (value, units sold) - numerical or boolean.
+													Facts have measures, for instance a transaction (fact) may have 2 measures (value, units sold) - numerical or boolean.
+											</li>
+											<li>A fact table works with dimension tables.
+													 	While the fact table holds the data to be analyzed, the dimension table stores data about the ways in which the data in the fact table can be analyzed.
 											</li>
 											<li>Here is how we can visualize the dependecy between facts and dimensions:
 <!-- start -->
 <pre>
-SELECT name
+SELECT salary
 FROM employees
-WHERE salary > 10000
+WHERE country IN ('Poland', 'Germany', 'France')
 </pre>
 <!-- stop -->
-												- <code>name</code> is one of facts and <code>salary</code> is one of the dimensions.
-											</li>
-											<li>Thus, a fact table works with dimension tables.
-													While the fact table holds the data to be analyzed, the dimension table stores data about the ways in which the data in the fact table can be analyzed.
+												- <code>salary</code> is one of facts and <code>country</code> is one of the dimensions.
 											</li>
 											<li>Thus, the fact table consists of two types of columns:
 												<br>
-												- foreign key columns that joins dimension tables (Time ID,	Product ID,	Customer ID),<br>
+												- foreign key columns that joins dimension tables (Time ID,	Product ID,	Customer ID for example below),<br>
 												- measure columns containing quantitative data being analyzed (Unit Sold).
 											</li>
-											<li>Fact table:
+											<li>Here is the example of fact table. Every sale is a fact that happens, and the fact table is used to record these facts:
 												<br>
 												<span style="font-size:12px;">source: searchdatamanagement.techtarget.com</span>
 												<table>
@@ -214,7 +214,11 @@ WHERE salary > 10000
 													</tbody>
 												</table>
 											</li>
+											<li>DWH structure where we have <u>denormalized</u> fact table (or a few of them) containing measures and foreign keys to <u>denormalized</u> dimension tables is called <b>star schema</b>.</li>
+											<li>DWH structure where we have <u>denormalized</u> fact table (or a few of them) containing measures and foreign keys to <u>normalized</u> dimension is called <b>snowflake schema</b>.</li>
 										</ul>
+
+
 
 										<h5>Columnar databae:</h5>
 										<ul>
@@ -251,14 +255,17 @@ Zielinska:001; Wrona:002,004; Kowalski:003;
 													We fetch data fast and only that data we need.
 													On the other hand, any record operations are very slow in a columnar database.
 											</li>
-											<li>Becasue fact tables in data warehouses are often long (many rows) and wide (many columns) and their data doesn't change while OLAP, they are being stored in columnar form.</li>
+											<li>Becasue fact tables in data warehouses are often long (many rows) and wide (many columns) and their data doesn't change while OLAP, they are being stored in te columnar form.</li>
 										</ul>
 
 										<h5>Data Warehous (DWH) desing:</h5>
 										<ul>
 											<li>Designing DWH we need to pay closer attention on business requirements of further reporting.</li>
 											<li>Data dimensions and granuality of data needs to be adjusted to reports that will be issuing based on the DWH.</li>
-											<li>Dimensions needs to follow granuality, no the other way around.</li>
+											<li>The granuality depends on business requirements.
+													In sales, besides price and units sold, we can associate transaction fact with foreign keys to dimensions as time, product, shop, salesman and even more.
+													The more dimensions, the more foreign keys, the more detailed analysis in the OLAP.</li>
+											<li>Dimensions need to follow granuality, no the other way around.</li>
 										</ul>
 
 										<h5>DWH working modes:</h5>
