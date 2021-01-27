@@ -64,7 +64,7 @@
 											<li>It stands for:
 												<br>
 												- <b>extract</b>: getting data from different sources.<br>
-												- <b>transform</b>: filter/map/enrich/combine/validate/sort/...<br>
+												- <b>transform</b>: filter/map/enrich/combine/validate/sort/applying business rules to the data<br>
 												- <b>load</b>: store data in the data warehouse or data mart.
 											</li>
 											<li>Data Warehouse (DW) vs Data Mart (DM):
@@ -72,6 +72,12 @@
 												- DW is broadly focused on all the departments. It is possible that it can even represent the entire company.<br>
 												- DM is a specific business subject-oriented, and it is used at a department level.
 											</li>
+										</ul>
+
+										<h5>Data Ingestion:</h5>
+										<ul>
+											<li>It's the process of obtaining and importing data for imediate use or long-term storage in a database.</li>
+											<li>To ingest something means literally to take something in or absorb something. Data can be streamed in real time or ingested in batches.</li>
 										</ul>
 
 										<h5>Fact Table and Dimension Table:</h5>
@@ -213,18 +219,39 @@ WHERE salary > 10000
 										<h5>Columnar databae:</h5>
 										<ul>
 											<li>In relational databases, tables are defined as an unordered collection of rows.</li>
-											<li>However columnar database sotre data in columnar sequence instead of row's.</li>
-											<li>
+											<li>However, columnar database stores data in columnar sequence instead of row's.</li>
+											<li>Here is employees table:
 <!-- start -->
 <pre>
-rowid		NrPrac			Imie	 	Nazwisko		Pensja
-001 		10 			Alicja 		Zielinska		5200
-002 		11 			Bogdan 		Wrona			4900
-003 		12			Czesław 	Kowalski 		5600
-004 		114			Dominik 	Wrona 			5200
+rowid		NrPrac		Imie	 	Nazwisko	Pensja
+001 		10 		Alicja 		Zielinska	5200
+002 		11 		Bogdan 		Wrona		4900
+003 		12		Czesław 	Kowalski 	5600
+004 		114		Dominik 	Wrona 		5200
 </pre>
 <!-- stop -->
+												<span style="font-size:12px;">source: if.uj.edu.pl</span><br>
+												- in columnar store, above data looks like:
+<!-- start -->
+<pre>
+10:001; 11:002; 12:003; 114:004;
+Alicja:001; Bogdan:002; Czesław:003; Dominik:004;
+Zielinska:001; Wrona:002,004; Kowalski:003;
+5200:001,004; 4900:002; 5600:003;
+</pre>
+<!-- stop -->
+												<span style="font-size:12px;">source: if.uj.edu.pl</span><br>
+												- where the first line contains the values of the whole column named <code>NrPrac</code><br>
+												- the same for the rest of columns,<br>
+												- attribute's value indicates specific <code>rowid</code>.<br>
 											</li>
+											<li>When quering database about one or tow columns then a relational database's engine needs to read all records anyway.
+													It slows down the overall performance.
+													In columnar database, engine read only columns that we query.
+													We fetch data fast and only that data we need.
+													On the other hand, any record operations are very slow in a columnar database.
+											</li>
+											<li>Becasue fact tables in data warehouses are often long (many rows) and wide (many columns) and their data doesn't change while OLAP, they are being stored in columnar form.</li>
 										</ul>
 
 									</header>
