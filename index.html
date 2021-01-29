@@ -314,7 +314,7 @@ WHERE X AND Pn
 												- instead of putting X condtion with every select we can put it once in the <b>materialized view</b>:<br>
 <!-- start -->
 <pre>
-CREATE MATERIALIZED VIEW my_mat_viwe AS
+CREATE MATERIALIZED VIEW my_mat_view AS
 SELECT ...
 FROM ...
 WHERE X
@@ -325,17 +325,17 @@ WHERE X
 <!-- start -->
 <pre>
 SELECT ...
-FROM my_mat_viwe
+FROM my_mat_view
 WHERE P1
 
 SELECT ...
-FROM my_mat_viwe
+FROM my_mat_view
 WHERE P2
 
 ........................
 
 SELECT ...
-FROM my_mat_viwe
+FROM my_mat_view
 WHERE Pn
 </pre>
 <!-- end -->
