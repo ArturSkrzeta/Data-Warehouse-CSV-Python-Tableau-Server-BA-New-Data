@@ -12,7 +12,7 @@ def get_flat_files():
 
 def read_csv_to_df(file):
     cols = list(pd.read_csv(file, nrows =1))
-    df = pd.read_csv(file, usecols = [col for col in cols if col not in ['id', 'deleted', 'last_update','time']])
+    df = pd.read_csv(file, usecols = [col for col in cols if col not in ['id', 'deleted', 'last_update', 'time', 'payer_name']], encoding = "latin1")
     return df
 
 def main():
