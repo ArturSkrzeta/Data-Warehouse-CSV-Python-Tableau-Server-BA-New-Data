@@ -226,11 +226,11 @@ WHERE country IN ('Poland', 'Germany', 'France')
 											<li>DWH structure where we have <u>denormalized</u> fact table (or a few of them) containing measures and foreign keys to <u>normalized</u> dimension is called <b>snowflake schema</b>.</li>
 										</ul>
 
-										<h5>Slowly Chanigng Dimensions</h5>
+										<h5>Slowly Changing Dimensions:</h5>
 										<ul>
 											<li>They are dimensions for which attributes change <b>slowly over time</b> due to business needs.</li>
 											<li>Slowly over time means changes happen occasionally rather than on a regular schedule.</li>
-											<li>We can distinguish some approaches to them:
+											<li>We can apply different approaches:
 													<br>
 													- type 1: overwriting the value with the new one and not tracking the historical data;<br>
 													- type 2: preserving the history by creating another records with updated value and unique primary key - we can put anothe column with versioning;<br>
