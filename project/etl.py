@@ -1,6 +1,20 @@
 import os
+import pyodbc
 import pandas as pd
+
 path = os.getcwd()
+conn_str = r'Driver={Microsoft Access Driver (*.mdb, *.accdb)};DBQ=.\transactions.accdb;'
+table_name = 'tblMain'
+
+def initilize_db_conn():
+    conn = pyodbc.connect(conn_str)
+    cursor = conn.cursor()
+    return conn, cursor
+
+def format_dataframe_rows_as_list_of_tuples(df):
+    df = df.fillna('')
+    rows = [tuple(cell) for cell in df.values]
+    return rows
 
 def get_flat_files():
     flat_files = []
@@ -26,9 +40,17 @@ def main():
     combined = pd.concat(dfs)
     combined.reset_index(inplace=True, drop=True)
     combined['alert'] = combined['amount'].map(lambda x: 'Yes' if x < -9000 else 'No')
+    combined['verified'] = combined['verified'].map(lambda x: str(x))
 
     # load
-    combined.to_csv('data.csv', index = False)
+    conn, cursor = initilize_db_conn()
+    sql_str = '''INSERT INTO tblMain(id, amount, curr, verified, country, city, alert) VALUES(?,?,?,?,?,?,?)'''
+    rows = format_dataframe_rows_as_list_of_tuples(combined)
 
-if __name__ == '__main__':
+    for row in rows:
+        cursor.execute(sql_str, row)
+
+    conn.commit()
+
+if  __name__ == '__main__':
     main()
