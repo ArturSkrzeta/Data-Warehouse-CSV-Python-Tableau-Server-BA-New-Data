@@ -1,6 +1,6 @@
 <h2>Data Warehouse: CSV flat files -> Python -> Tableau -> Server -> Business Analysis -> New data</h2>
 <h3>Intro</h3>
-<img src="images/datapipeline.jpg">
+<img src="images/schema.JPG">
 <h3>Data Warehousing consists of following steps:</h3>
 <ol>
   <li>CSV as dasta extracts from different systems,</li>
