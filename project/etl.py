@@ -40,6 +40,7 @@ def main():
     combined = pd.concat(dfs)
     combined.reset_index(inplace=True, drop=True)
     combined['alert'] = combined['amount'].map(lambda x: 'Yes' if x < -9000 else 'No')
+    combined['amount'] = combined['amount'].map(lambda x: 1.05 * x if x > 9000 else x)
     combined['verified'] = combined['verified'].map(lambda x: str(x))
 
     # load
