@@ -537,11 +537,11 @@ WHERE Pn
 										</li>
 										<li>INCLUDE LOD:
 											<br>
-											<code>{EXCLUDE [Category]: SUM(Sales)}</code>
+											<code>AVG({INCLUDE [Region]: SUM(Profit)})</code>
 											<br><br>
 											<img src="images/include.JPG" width="600"><span style="font-size:12px;">source: sqlbelle</span><br>
 											- INCLUDE puts more dimensions (more details) in the view and calculates aggregation on them.<br>
-											-
+											- To the 'Category' dimension we want to include 'Region' dimension and perfom above calculation on it.
 										</li>
 									</ul>
 
