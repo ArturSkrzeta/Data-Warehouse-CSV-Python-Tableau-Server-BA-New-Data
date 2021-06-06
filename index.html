@@ -518,7 +518,18 @@ WHERE Pn
 											- this computes at the <b>Manufacturer</b> level regardless of what viz LOD is.<br>
 											- MAX([Sales]) will be fixed on a particular Manufacturer regardless of dimension, filters and the view overall.<br>
 											<br>
-											<img src="images/fixed.JPG"><span style="font-size:12px;">source: Vizual Intelligence</span>
+											<img src="images/fixed.JPG"><span style="font-size:12px;">source: Vizual Intelligence</span><br>
+											- FIXED expressions are not being affected by dimension filtering.<br>
+											- There is also something like <b>Fixed Table-Scoped LOD</b> with neither TYPE nor [Dimension List]: <code>{Sum(Sales)}</code>.<br>
+											- concluding on FIXED type of level of detail, it doesn't care what else is in the view taking into account only passed dimension or not as it's optional.
+										</li>
+									</ul>
+
+									<h5>Order of operations in Tableau:</h5>
+									<ul>
+										<li>Here is the hierarchy of operations where we can see that FIXED LOD is not being affected by dimension filters but INCLUDE/EXCLUDE are so.
+											<br>
+											<img src="images/order_of_operations_overall.png" width="500"><span style="font-size:12px;">source: help.tableau.com</span><br>
 										</li>
 									</ul>
 
