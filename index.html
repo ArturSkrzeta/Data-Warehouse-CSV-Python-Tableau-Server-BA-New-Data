@@ -462,6 +462,34 @@ WHERE Pn
 										</li>
 										<li>LOD Expressions give a control over the level of granuality.
 											They can be performed at a more granular level (INCLUDE), a less granular level (EXCLUDE), or an entirely independent level (FIXED).</li>
+										<li>Granuality - each individual distinguishable piece of data.</li>
+										<li>Level of Details:
+											<br><br>
+											<table>
+												<tr>
+											    <th>High Level</th>
+											    <th>Low Level</th>
+											  </tr>
+											  <tr>
+											    <td>Excludes details</td>
+											    <td>Includes details</td>
+											  </tr>
+											  <tr>
+											    <td>Summary</td>
+											    <td>Detailed view</td>
+											  </tr>
+												<tr>
+													<td>Less granular</td>
+													<td>More granular</td>
+												</tr>
+												<tr>
+													<td>More aggregated</td>
+													<td>Less aggregated</td>
+												</tr>
+											</table>
+											- We can conclude from above comparison that the higher aggregation, the lower granuality and vice versa.<br>
+											- Level of detail in Tableau is what is shownd on the view.
+										</li>
 										<li>viz and custom LOD:
 											<br>
 											- viz LOD: <code>AVG([Sales])</code><br>
@@ -472,9 +500,8 @@ WHERE Pn
 											- this computes at the <b>Manufacturer</b> level regardless of what viz LOD is.<br>
 											- AVG([Sales]) will be fixed on a particular Manufacturer regardless of dimension, filters and the view overall.<br>
 											<br>
-											<img src="images/fixed.JPG"><span style="font-size:12px;">source: Vizual Intelligence Inc.</span>
+											<img src="images/fixed.JPG"><span style="font-size:12px;">source: Vizual Intelligence</span>
 										</li>
-										<li>The higher aggregation, the lower granuality and vice versa.</li>
 									</ul>
 
 									<h5>Conclusions:</h5>
