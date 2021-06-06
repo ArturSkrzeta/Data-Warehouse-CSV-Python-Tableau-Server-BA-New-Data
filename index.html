@@ -441,16 +441,35 @@ WHERE Pn
 									<h5>Goods pricing analysis:</h5>
 									<img src="images/dashboard2.JPG" width="780">
 
-									<h5>Tableau:</h5>
+									<h5>LOD in Tableau:</h5>
 									<ul>
-										<li><b>Level of Detail</b> defines granuality of the data.
+										<li>Defines granuality of the data.
 											<br><br>
-											<img src="images/lod1.JPG">
+											<img src="images/lod1.JPG"><span style="font-size:12px;">source: Tableau Software</span>
 											<br>
 											- in above case the level of detail of the visualization is 'region' only.<br>
+											<br>
+											<img src="images/lod2.JPG"><span style="font-size:12px;">source: Tableau Software</span>
+											<br>
+											- in above case the level of detail is more complex as we add more measures and each mark is the combination of two: 'category' and 'region'.
+										</li>
+										<li>Different shelves have different effect on the LOD of the view apart from dimensions themeselves.
+											<br><br>
+											<img src="images/lod3.JPG" width="400"><span style="font-size:12px;">source: Tableau Software</span>
+											<br>
+											- LOD is defined by dimensions put in the highlighted shelves.<br>
+											- filter doesn't impac the LOD.
+										</li>
+										<li>viz LOD:
+											<br>
+											<code>AVG([Sales])</code>
+										</li>
+										<li>custom LOD:
+											<br>
+											<code>{ fixed [State]: AVG([Sales]) }</code><br>
+											- this computes at the <b>State</b> level regardless of what viz LOD is.
 										</li>
 										<li>The higher aggregation, the lower granuality and vice versa.</li>
-										<li></li>
 									</ul>
 
 									<h5>Conclusions:</h5>
