@@ -461,7 +461,7 @@ WHERE Pn
 											- filter doesn't impac the LOD.
 										</li>
 										<li>LOD Expressions give a control over the level of granuality.
-											They can be performed at a more granular level (INCLUDE), a less granular level (EXCLUDE), or an entirely independent level (FIXED).</li>
+											They can be performed at a more granular level (INCLUDE), a less granular level (EXCLUDE), or an entirely independent of view level (FIXED).</li>
 										<li>Granuality - each individual distinguishable piece of data.</li>
 										<li>Level of Details:
 											<br><br>
@@ -488,17 +488,31 @@ WHERE Pn
 												</tr>
 											</table>
 											- We can conclude from above comparison that the higher aggregation, the lower granuality and vice versa.<br>
-											- Level of detail in Tableau is what is shownd on the view.
+											- Level of detail in Tableau is what is shown on the view.
 										</li>
-										<li>viz and custom LOD:
+										<li>Viz LOD:
 											<br>
-											- viz LOD: <code>AVG([Sales])</code><br>
-											- custom LOD with LOD Expression (FIXED):
+											- when we drag a measure to a shelf it gets aggregate to SUM in the view by default:<br>
 											<br>
+											<img src="images/grand_total.JPG" width="400"><span style="font-size:12px;">source: Vizual Intelligence</span><br>
+											- but we can be more precised by dragging one dimensin to another shelf, receiving totls at the level of Category:<br><br>
+											<img src="images/granular_total.JPG" width="400"><span style="font-size:12px;">source: Vizual Intelligence</span><br>
+											- the more dimensions we add, the more granular numbers become,<br>
+										<li>Viz LOD: <code>MAX([Sales])</code></li>
+										</li>
+										<li>Custom LOD with LOD Expression:
+											<br>
+											- syntax:<br>
+											<code>{TYPE [Dimension List]: AGGREAGATE FUNCTION}</code>,<br>
+											where TYPE might be:<br>
+											- FIXED: independent of view,<br>
+											- INCLUDE: minus from view,<br>
+											- EXCLUDE: add to view.<br>
+											- example:<br>
 											<code>{ fixed [Manufacturer]: MAX([Sales]) }</code><br>
 											- we can read this as following: for each state count average sales.<br>
 											- this computes at the <b>Manufacturer</b> level regardless of what viz LOD is.<br>
-											- AVG([Sales]) will be fixed on a particular Manufacturer regardless of dimension, filters and the view overall.<br>
+											- MAX([Sales]) will be fixed on a particular Manufacturer regardless of dimension, filters and the view overall.<br>
 											<br>
 											<img src="images/fixed.JPG"><span style="font-size:12px;">source: Vizual Intelligence</span>
 										</li>
