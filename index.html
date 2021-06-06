@@ -466,8 +466,12 @@ WHERE Pn
 										</li>
 										<li>custom LOD:
 											<br>
-											<code>{ fixed [State]: AVG([Sales]) }</code><br>
-											- this computes at the <b>State</b> level regardless of what viz LOD is.
+											<code>{ fixed [Manufacturer]: MAX([Sales]) }</code><br>
+											- we can read this as following: for each state count average sales.<br>
+											- this computes at the <b>Manufacturer</b> level regardless of what viz LOD is.<br>
+											- AVG([Sales]) will be fixed od particular Manufacturer regardless of dimension, filters and the view overall.<br>
+											<br>
+											<img src="images/fixed.JPG"><span style="font-size:12px;">source: Tableau Software</span>
 										</li>
 										<li>The higher aggregation, the lower granuality and vice versa.</li>
 									</ul>
