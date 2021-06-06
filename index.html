@@ -441,7 +441,7 @@ WHERE Pn
 									<h5>Goods pricing analysis:</h5>
 									<img src="images/dashboard2.JPG" width="780">
 
-									<h5>LOD in Tableau:</h5>
+									<h5>LOD and LOD Expressions in Tableau:</h5>
 									<ul>
 										<li>Defines granuality of the data.
 											<br><br>
@@ -460,18 +460,19 @@ WHERE Pn
 											- LOD is defined by dimensions put in the highlighted shelves.<br>
 											- filter doesn't impac the LOD.
 										</li>
-										<li>viz LOD:
+										<li>LOD Expressions give a control over the level of granuality.
+											They can be performed at a more granular level (INCLUDE), a less granular level (EXCLUDE), or an entirely independent level (FIXED).</li>
+										<li>viz and custom LOD:
 											<br>
-											<code>AVG([Sales])</code>
-										</li>
-										<li>custom LOD:
+											- viz LOD: <code>AVG([Sales])</code><br>
+											- custom LOD with LOD Expression (FIXED):
 											<br>
 											<code>{ fixed [Manufacturer]: MAX([Sales]) }</code><br>
 											- we can read this as following: for each state count average sales.<br>
 											- this computes at the <b>Manufacturer</b> level regardless of what viz LOD is.<br>
-											- AVG([Sales]) will be fixed od particular Manufacturer regardless of dimension, filters and the view overall.<br>
+											- AVG([Sales]) will be fixed on a particular Manufacturer regardless of dimension, filters and the view overall.<br>
 											<br>
-											<img src="images/fixed.JPG"><span style="font-size:12px;">source: Tableau Software</span>
+											<img src="images/fixed.JPG"><span style="font-size:12px;">source: Vizual Intelligence Inc.</span>
 										</li>
 										<li>The higher aggregation, the lower granuality and vice versa.</li>
 									</ul>
