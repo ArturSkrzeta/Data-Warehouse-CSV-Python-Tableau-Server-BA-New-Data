@@ -506,10 +506,11 @@ WHERE Pn
 											<code>{TYPE [Dimension List]: AGGREAGATE FUNCTION}</code>,<br>
 											where TYPE might be:<br>
 											- FIXED: independent of view returning a scalar (a singular value,)<br>
-											- INCLUDE: minus from view,<br>
-											- EXCLUDE: add to view,<br>
-											- and [Dimension List] is optional,<br>
-											- example:
+											- EXCLUDE: minus from view,<br>
+											- INCLUDE: add to view,<br>
+											- and [Dimension List] is optional.<br>
+										</li>
+										<li>FIXED example:
 											<br>
 											<code>{FIXED : SUM([Sales])}</code><br><br>
 											<img src="images/fixed_2.JPG" width="500"><span style="font-size:12px;">source: sqlbelle</span><br><br>
@@ -522,6 +523,14 @@ WHERE Pn
 											- FIXED expressions are not being affected by dimension filtering.<br>
 											- There is also something like <b>Fixed Table-Scoped LOD</b> with neither TYPE nor [Dimension List]: <code>{Sum(Sales)}</code>.<br>
 											- concluding on FIXED type of level of detail, it doesn't care what else is in the view taking into account only passed dimension or not as it's optional.
+										</li>
+										<li>EXCLUDE example:
+											<br>
+											<code>{EXCLUDE [Category]: SUM(Sales)}</code>
+											<br><br>
+											<img src="images/exclude.JPG" width="650"><span style="font-size:12px;">source: sqlbelle</span><br>
+											- We want to exclude 'Category' dimension from the view and calculate the sum of Sales.<br>
+											- EXCLUDE LOD is being affected by dimension filters and is getting detailed while more dimensions put in the shelves.
 										</li>
 									</ul>
 
