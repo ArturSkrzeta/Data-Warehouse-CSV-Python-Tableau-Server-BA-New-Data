@@ -494,22 +494,26 @@ WHERE Pn
 											<br>
 											- when we drag a measure to a shelf it gets aggregate to SUM in the view by default:<br>
 											<br>
-											<img src="images/grand_total.JPG" width="400"><span style="font-size:12px;">source: Vizual Intelligence</span><br>
-											- but we can be more precised by dragging one dimensin to another shelf, receiving totls at the level of Category:<br><br>
-											<img src="images/granular_total.JPG" width="400"><span style="font-size:12px;">source: Vizual Intelligence</span><br>
-											- the more dimensions we add, the more granular numbers become,<br>
-										<li>Viz LOD: <code>MAX([Sales])</code></li>
+											<img src="images/grand_total.JPG" width="400"><span style="font-size:12px;">source: sqlbelle</span><br>
+											- but we can be more precised by dragging one dimensin to another shelf, receiving totals at the level of Category:<br><br>
+											<img src="images/granular_total.JPG" width="400"><span style="font-size:12px;">source: sqlbelle</span><br>
+											- the more dimensions we add, the more granular numbers become.<br>
+										<li>Viz LOD: <code>MAX([Sales])</code>.</li>
 										</li>
 										<li>Custom LOD with LOD Expression:
 											<br>
 											- syntax:<br>
 											<code>{TYPE [Dimension List]: AGGREAGATE FUNCTION}</code>,<br>
 											where TYPE might be:<br>
-											- FIXED: independent of view,<br>
+											- FIXED: independent of view returning a scalar (a singular value,)<br>
 											- INCLUDE: minus from view,<br>
-											- EXCLUDE: add to view.<br>
-											- example:<br>
-											<code>{ fixed [Manufacturer]: MAX([Sales]) }</code><br>
+											- EXCLUDE: add to view,<br>
+											- and [Dimension List] is optional,<br>
+											- example:
+											<br>
+											<code>{FIXED : SUM([Sales])}</code><br><br>
+											<img src="images/fixed_2.JPG" width="500"><span style="font-size:12px;">source: sqlbelle</span><br><br>
+											<code>{ FIXED [Manufacturer]: MAX([Sales]) }</code><br>
 											- we can read this as following: for each state count max sales.<br>
 											- this computes at the <b>Manufacturer</b> level regardless of what viz LOD is.<br>
 											- MAX([Sales]) will be fixed on a particular Manufacturer regardless of dimension, filters and the view overall.<br>
