@@ -439,7 +439,7 @@ WHERE Pn
 									<img src="images/dashboard.JPG" width="780">
 
 									<h5>Goods pricing analysis:</h5>
-									<img src="images/dashboard2.JPG" width="780">
+									<img src="images/kpi.jpg" width="780">
 
 									<h5>LOD and LOD Expressions in Tableau:</h5>
 									<ul>
@@ -554,6 +554,25 @@ WHERE Pn
 										<li>Context filter affects FIXED LOD, here is how to set it up:
 											<br><br>
 											<img src="images/context_filter.JPG" width="350"><span style="font-size:12px;">source: sqlbelle</span><br>
+										</li>
+									</ul>
+
+									<h5>Calculated Fields:</h5>
+									<ul>
+										<li>We can embded if condition withing AGGREAGATE functions.
+											<br>
+											<code>SUM(</code><br>&nbsp&nbsp&nbsp&nbsp
+												<code>IF [Item Quality] = "Highest Quality"</code><br>&nbsp&nbsp&nbsp&nbsp
+												<code>THEN 1</code><br>&nbsp&nbsp&nbsp&nbsp
+												<code>END</code><br>
+											<code>)</code><br>
+											<code>/</code><br>
+											<code>COUNT([Item Quality])</code>
+										</li>
+										<li>Those records that don't meet the condition are classifed as NULLS and are not counted by the function.</li>
+										<li>We can then put the calculated field into a shelf to get ratio in the view:
+											<br><br>
+											<img src="images/calculated_ratio.JPG">
 										</li>
 									</ul>
 
