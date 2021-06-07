@@ -520,9 +520,24 @@ WHERE Pn
 											- MAX([Sales]) will be fixed on a particular Manufacturer regardless of dimension, filters and the view overall.<br>
 											<br>
 											<img src="images/fixed.JPG"><span style="font-size:12px;">source: Vizual Intelligence</span><br>
-											- FIXED expressions are not being affected by dimension filtering.<br>
-											- There is also something like <b>Fixed Table-Scoped LOD</b> with neither TYPE nor [Dimension List]: <code>{Sum(Sales)}</code>.<br>
-											- concluding on FIXED type of level of detail, it doesn't care what else is in the view taking into account only passed dimension or not as it's optional.
+										</li>
+										<li>FIXED calculations are applied before dimension filters:
+											<br>
+											- FIXED level of detail doesn't care about what else is in the view, taking into account only passed dimension or not as it's optional.<br>
+											- example:
+											<br>
+											<code>SUM([Sales]) / ATTR({FIXED : SUM([Sales])})</code><br>
+											- Having following calculation on one shelf in a view along with [State] on a different shelf,
+												the calculation will give you the ratio of a state’s sales to total sales.<br>
+											- If you then put [State] on the Filters shelf to hide some of the states, the filter will affect only the numerator in the calculation.
+												Since the denominator is a FIXED level of detail expression,
+												it will still divide the sales for the states still in the view against the total sales for all states—including the ones that have been filtered out of the view.<span style="font-size:16px;"> (source: Tableu help)</span>
+										</li>
+										<li>Fixed Table-Scoped LOD
+											<br>
+											- There is no TYPE and no [Dimension List]:<br>
+											<code>[Sales] - {AVG([Sales])}</code><br>
+											- by calculation above we can compare store sales for each individual store to the average of sales for all stores.
 										</li>
 										<li>EXCLUDE example:
 											<br>
