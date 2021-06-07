@@ -576,6 +576,24 @@ WHERE Pn
 										</li>
 									</ul>
 
+									<h5>Parameters:</h5>
+									<ul>
+										<li>Parameter is a variable that can be used across the workbook.</li>
+										<li>It is a field that accepts input from the end user which then can be used in some calculations or filters.</li>
+										<li>For example I can be asking user about 'Value Threshold' as the variable for the calculated field:
+											<br>
+											<code>IF SUM([Value]) >= [Value Threshold]</code>
+											<code>THEN "OK"</code>
+											<code>END</code>
+										</li>
+										<li>Parameter input field:
+											<br><br>
+											<img src="images/parametr.JPG">
+										</li>
+									</ul>
+
+
+
 									<h5>Conclusions:</h5>
 									<ul>
 										<li>Python script combines flat files into one Tableau input.</li>
