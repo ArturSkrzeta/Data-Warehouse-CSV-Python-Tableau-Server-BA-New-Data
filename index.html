@@ -527,9 +527,9 @@ WHERE Pn
 											- example: <code>SUM([Sales]) / ATTR({FIXED : SUM([Sales])})</code><br>
 											- having following calculation on one shelf in a view along with [State] dimension on a different shelf,
 												the calculation will give you the ratio of a state’s sales to total sales.<br>
-											- If you then put [State] on the Filters shelf to hide some of the states, the filter will affect only the numerator in the calculation.
+											- if you then put [State] on the Filters shelf to hide some of the states, the filter will affect only the numerator in the calculation.
 												Since the denominator is a FIXED level of detail expression,
-												it will still divide the sales for the states still in the view against the total sales for all states—including the ones that have been filtered out of the view.<span style="font-size:16px;"> (source: Tableu help)</span>
+												it will still divide the sales for the states still in the view against the total sales for all states—including the ones that have been filtered out of the view <span style="font-size:16px;"> (source: Tableu help)</span>.
 										</li>
 										<li>Fixed Table-Scoped LOD
 											<br>
