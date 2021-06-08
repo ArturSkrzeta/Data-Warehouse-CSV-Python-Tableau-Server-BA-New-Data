@@ -524,10 +524,8 @@ WHERE Pn
 										<li>FIXED calculations are applied before dimension filters:
 											<br>
 											- FIXED level of detail doesn't care about what else is in the view, taking into account only passed dimension or not as it's optional.<br>
-											- example:
-											<br>
-											<code>SUM([Sales]) / ATTR({FIXED : SUM([Sales])})</code><br>
-											- Having following calculation on one shelf in a view along with [State] on a different shelf,
+											- example: <code>SUM([Sales]) / ATTR({FIXED : SUM([Sales])})</code><br>
+											- having following calculation on one shelf in a view along with [State] dimension on a different shelf,
 												the calculation will give you the ratio of a state’s sales to total sales.<br>
 											- If you then put [State] on the Filters shelf to hide some of the states, the filter will affect only the numerator in the calculation.
 												Since the denominator is a FIXED level of detail expression,
