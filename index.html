@@ -541,15 +541,17 @@ WHERE Pn
 											<br>
 											- There is no TYPE and no [Dimension List]:<br>
 											<code>[Sales] - {AVG([Sales])}</code><br>
-											- by calculation above we can compare store sales for each individual store to the average of sales for all stores.
+											- By calculation above we can compare store sales for each individual store to the average of sales for all stores.<br>
+											- When the outcome is negative for a particular store then its sales is less than average overall sales.
 										</li>
 										<li>EXCLUDE example:
 											<br>
 											<code>{EXCLUDE [Category]: SUM(Sales)}</code>
 											<br><br>
 											<img src="images/exclude.JPG" width="600"><span style="font-size:12px;">source: sqlbelle</span><br>
-											- We want to exclude 'Category' dimension from the view and calculate the sum of Sales.<br>
+											- We want to exclude 'Category' dimension from the view and calculate the sum of Sales (like it is from the high level without any detailes provided by a dimension).<br>
 											- EXCLUDE LOD is being affected by dimension filters and is getting detailed while more dimensions put in the shelves.<br>
+											- The same can be done with FIXED LOD: <code>{ FIXED: SUM([Sales]) }</code><br>
 											- We can also be excluding more dimensions:
 											<br><br>
 											<img src="images/exclude2.JPG" width="600"><span style="font-size:12px;">source: sqlbelle</span><br>
