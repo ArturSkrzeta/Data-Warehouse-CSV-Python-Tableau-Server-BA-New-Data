@@ -432,8 +432,36 @@ WHERE Pn
 										<li>Go to step 1.</li>
 									</ol>
 
-									<h5>Workflow:</h5>
+									<h4>Workflow:</h4>
 									<img src="images/schema.JPG" width="780">
+
+									<h4>Python</h4>
+
+									<h5>ETL:</h5>
+									<ol>
+										<li>Getting all of the flat files in the current directory and consolidating them into one Pandas dataframe.
+											<br>
+											<code>combined = pd.concat(dfs)</code>
+										</li>
+										<li>Replacing values based on the condition in lambda function.
+											<br>
+											<code>combined['Company'] = combined['Company'].map(lambda x: 'ABC' if x in ['ZXC', 'XXX', 'YYY'] else x)</code>
+										</li>
+										<li>Filling up blanks based on the condition for a values in the another column.
+											<br>
+											<code>combined.loc[(combined['Status'] == 'Closed') & (combined['Request quality'].isnull()), 'Request quality'] = 'not evaluated'</code>
+										</li>
+										<li>Setting data types to specific column.
+											<br>
+											<code>combined['Request nr'] = combined['Request nr'].astype(str)</code>
+										</li>
+										<li>Saving consolidated dataframe into excel file:
+											<br>
+											<code>combined.to_excel('combined.xlsx', index=False)</code>
+										</li>
+									</ol>
+
+									<h4>Tableau</h4>
 
 									<h5>Sales dashboard:</h5>
 									<img src="images/dashboard.JPG" width="780">
