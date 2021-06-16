@@ -432,7 +432,7 @@ WHERE Pn
 										<li>Go to step 1.</li>
 									</ol>
 
-									<h4>Workflow:</h4>
+									<h4>Workflow</h4>
 									<img src="images/schema.JPG" width="780">
 
 									<h4>Python</h4>
@@ -647,9 +647,16 @@ WHERE Pn
 												<code>END</code><br>
 											<code>)</code><br>
 											<code>/</code><br>
-											<code>COUNT([Item Quality])</code>
+											<code>SUM(</code><br>&nbsp&nbsp&nbsp&nbsp
+												<code>IF [Item Quality] <> ""</code><br>&nbsp&nbsp&nbsp&nbsp
+												<code>THEN 1</code><br>&nbsp&nbsp&nbsp&nbsp
+												<code>END</code><br>
+											<code>)</code><br>
 										</li>
-										<li>Those records that don't meet the condition are classifed as NULLS and are not counted by the function.</li>
+										<li>Those records that don't meet the condition are classifed as NULLS and are not counted by the function.
+											<br><br>
+											<img src="images/raw_data_with_calculated_field.JPG">
+										</li>
 										<li>We can then put the calculated field into a shelf to get ratio in the view:
 											<br><br>
 											<img src="images/calculated_ratio.jpg">
