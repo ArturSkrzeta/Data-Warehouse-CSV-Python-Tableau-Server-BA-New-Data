@@ -702,6 +702,43 @@ WHERE Pn
 										</li>
 									</ul>
 
+									<h5>Row Level Security:</h5>
+									<ul>
+										<li>A kind of the user filter that restricts access at the data row level.</li>
+										<li>In the filter we have to specify which row can be visible for any given person on the server.</li>
+										<li>Example usecase:
+											<br>
+											<i>When publishing the report, you want to allow each regional manager to see only the data relevant to his or her region.
+												Rather than creating a separate view for each manager, you can apply a user filter that restricts access to the data based on users’ characteristics, such as their role.</i>
+										</li>
+										<li>In order to apply RLS we can create a dynamic filter using a calculated field that automates the process of mapping users to data rows.
+												This method requires that the underlying data includes the security information for filtering.
+												For example, if you want to filter a view so that only supervisors can see it, the underlying data must be set up to include user names and specify each user’s role.
+										</li>
+										<li>For example we have some regions and we want to assign a supervisor to each of them:
+											<br><br>
+											<img src="images/rsl.JPG">
+											<br>
+											That way we keep security information within the dataset.
+											<br><br>
+											<img src="images/rsl2.JPG">
+											<br>
+											<br><br>
+											In order to get the data filtered by the current user (supervisor) who actually views the analysis we need to create the calcualted field making usage of a so-called user function:
+											<img src="images/rsl3.JPG">
+											<br>
+											so that we can put it into the filters shelf having only TRUE selected. Here is the final look of the view:
+											<br><br>
+											<img src="images/rsl4.JPG">
+											<br>
+											In fact, we can get rid of <b>Supervisor</b> pill from rows shelf.
+											<br><br>
+											<img src="images/rsl5.JPG">
+											<br>
+											That way, when publishing the analysis only relevant ro superviosr regions will be displayed without having to create different views for each reagion (supervisor).
+										</li>
+									</ul>
+
 
 									<h5>Conclusions:</h5>
 									<ul>
