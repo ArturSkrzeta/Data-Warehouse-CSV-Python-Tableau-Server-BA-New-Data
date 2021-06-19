@@ -443,6 +443,12 @@ WHERE Pn
 											<br>
 											<code>combined = pd.concat(dfs)</code>
 										</li>
+										<li>Assigning a random Region for exercies purpose:
+											<br>
+											<code>import random</code><br>
+											<code>regions = ['AP', 'EMEA', 'AMS', 'LAC', 'NA']</code><br>
+											<code>combined['Region'] = combined['Region'].map(lambda x: random.choice(regions))</code>
+										</li>
 										<li>Replacing values based on the condition in lambda function.
 											<br>
 											<code>combined['Company'] = combined['Company'].map(lambda x: 'ABC' if x in ['ZXC', 'XXX', 'YYY'] else x)</code>
