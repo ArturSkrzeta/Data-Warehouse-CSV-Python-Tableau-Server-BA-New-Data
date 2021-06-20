@@ -602,7 +602,12 @@ WHERE Pn
 											- There is no TYPE and no [Dimension List]:<br>
 											<code>[Sales] - {AVG([Sales])}</code><br>
 											- By calculation above we can compare store sales for each individual store to the average of sales for all stores.<br>
-											- When the outcome is negative for a particular store then its sales is less than average overall sales.
+											- When the outcome is negative for a particular store then its sales is less than average overall sales.<br>
+											- Here is the another example of getting comparing max slaes dat with year of each record:<br>
+											<code>IF {MAX(YEAR([Order Date]))}=YEAR([Order Date]) THEN [Sales Value]</code><br>
+											<code>ELSE 0</code><br>
+											<code>END</code><br>
+											- when record's year doesn't equal max year from entire dataset then each record gets 0 as the result from the calculated field.
 										</li>
 										<li>EXCLUDE example:
 											<br>
