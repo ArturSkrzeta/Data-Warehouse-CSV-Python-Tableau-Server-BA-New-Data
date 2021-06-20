@@ -607,7 +607,8 @@ WHERE Pn
 											<code>IF {MAX(YEAR([Order Date]))}=YEAR([Order Date]) THEN [Sales Value]</code><br>
 											<code>ELSE 0</code><br>
 											<code>END</code><br>
-											- when record's year doesn't equal max year from entire dataset then each record gets 0 as the result from the calculated field.
+											- when record's year doesn't equal max year from entire dataset then each record gets 0 as the result from the calculated field.<br>
+											- Just to sum this up, when no FIXED, INCLUDE, EXCLUDE then { } implies FIXED on everything inside.
 										</li>
 										<li>EXCLUDE example:
 											<br>
