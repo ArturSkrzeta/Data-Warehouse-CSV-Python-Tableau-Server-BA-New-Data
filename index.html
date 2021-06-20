@@ -687,7 +687,21 @@ WHERE Pn
 									<h5>Parameters:</h5>
 									<ul>
 										<li>Parameter is a variable that can be used across the workbook.</li>
-										<li>It is a field that accepts input from the end user which then can be used in some calculations or filters.</li>
+										<li>It is a field that accepts input from the end user who takes control over the visualization.</li>
+										<li>Here are some cases when the parameter can be used:
+											<br>
+											- numeric thresholds,<br>
+											- what-if analysis,<br>
+											- dynamic field, axis, titles,<br>
+											- filtering across different data sources,<br>
+											- top N.
+										</li>
+										<li>How to set it up:
+											<br>
+											1. Creating parameter.<br>
+											2. Placing parameter in either a calculated field, reference line, set or filter.<br>
+											3. Putting an input field to the view.
+										</li>
 										<li>For example I can be asking user about 'Value Threshold' as the variable for the calculated field:
 											<br>
 											<code>IF SUM([Value]) >= [Value Threshold]</code><br>
