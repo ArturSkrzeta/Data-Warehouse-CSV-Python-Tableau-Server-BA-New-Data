@@ -702,15 +702,21 @@ WHERE Pn
 											2. Placing parameter in either a calculated field, reference line, set or filter.<br>
 											3. Putting an input field to the view.
 										</li>
-										<li>For example I can be asking user about 'Value Threshold' as the variable for the calculated field:
+										<li>For example I can be asking user about 'Value Threshold'. Then I need to create a parameter that accepts integer, showing the input field:
+											<br><br>
+											<img src="images/parameter.JPG">
+										</li>
+										<li>We can put the variable in the calculated field:
 											<br>
 											<code>IF SUM([Value]) >= [Value Threshold]</code><br>
 											<code>THEN "OK"</code><br>
 											<code>END</code>
 										</li>
-										<li>Parameter input field:
+										<li>Having set calculated field, we can drag and drop it into color shelf:
 											<br><br>
-											<img src="images/parameter.JPG">
+											<img src="images/parameter1.JPG">
+											<br>
+											- as we can see, there is the color distinction for values > 1,000,000.00
 										</li>
 									</ul>
 
