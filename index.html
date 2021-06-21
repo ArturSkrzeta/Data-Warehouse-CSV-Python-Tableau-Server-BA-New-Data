@@ -718,6 +718,22 @@ WHERE Pn
 											<br>
 											- as we can see, there is the color distinction for values > 1,000,000.00
 										</li>
+										<li>And here is another example of a dynamic dimension:
+											<br>
+											- parameter (Select Dimension):
+											<br><br>
+											<img src="images/parameter3.JPG">
+											<br>
+											- calculated field (Dynamic Dimension):<br>
+											<code>CASE [Select Dimension]</code><br>
+											<code>WHEN 'Company' THEN [Group Company]</code><br>
+											<code>WHEN 'Region' THEN [Region]</code><br>
+											<code>WHEN 'Tracker' THEN [Tracker Name]</code><br>
+											<code>END</code><br>
+											- each selection of the parameter in [Comapny, Region, Tracker] will reflect with different dimension on Rows shelf (due to calculated field):
+											<br><br>
+											<img src="imagrs/parameter4.JPG">
+										</li>
 									</ul>
 
 									<h5>Color shlef:</h5>
