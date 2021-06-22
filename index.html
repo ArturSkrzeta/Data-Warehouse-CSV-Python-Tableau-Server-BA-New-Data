@@ -484,9 +484,22 @@ WHERE Pn
 										</li>
 										<li>We can combine data in different ways:
 											<br>
-											- Joins - combining two data sets horizontally on a shared dimension.<br>
-											- Blending - always a left join.<br>
-											- Unions - combining data sets vertically on shared dimensions.
+											1. Joins - combining two data sets horizontally on a shared dimension.
+											<br>
+											- left join of two tables (dimension and fact):
+											<br>
+											<span style="font-size:12px;">source: OneNumber LLC</span><img src="images/lfet_join_dimension_fact.jpg">
+											<br>
+											- when joining we need to be careful if number of jouned records is higher than number of records in the fact table.<br>
+											- as it is the left join applied, we get everything from dimensions even though there might be no fact registered for particular record - in such case we get Null assigned.
+											<br>
+											- full outer join on two fact tables:
+											<br><br>
+											<img src="images/outer_join.jpg"><span style="font-size:12px;">source: OneNumber LLC</span>
+											<br>
+											- as we can see there might be no sales for ice creams on Monday and no sales for chocolate on Sunday but full outer join takes all records even though there might be no matches.
+											2. Blending - always a left join.<br>
+											3. Unions - combining data sets vertically on shared dimensions.
 										</li>
 									</ul>
 
