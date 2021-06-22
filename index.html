@@ -507,7 +507,15 @@ WHERE Pn
 										<li>We can call them as a second pass aggregation like runnin totals, percent of totals and so on.</li>
 										<li>In other words, calculations are made based on the result that comes back from a data source.
 												Tableau issues query to the data source and returns a set of aggregated results.
-												Then, Tableau proceed with table calculation inside against that set of aggregated result.</li>
+												Then, Tableau proceed with table calculation inside against that set of aggregated result.
+										</li>
+										<li>There are some factors that affect table calculations:
+											<br>
+											- direction (left to right or top to bottom),<br>
+											- scope (table - everythin in the view, pane - subgroups, cell - row and column intersection),<br>
+											- layout (dimension in shelf - level of detail),<br>
+											- filters.
+										</li>
 									</ul>
 
 									<h5>LOD and LOD Expressions in Tableau:</h5>
