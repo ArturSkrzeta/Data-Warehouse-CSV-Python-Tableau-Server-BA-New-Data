@@ -504,7 +504,7 @@ WHERE Pn
 									<h5>Table Calculation:</h5>
 									<ul>
 										<li>This is a kind of calculations thst is performed on aggregated measures that Tableau sees in the virtual table.</li>
-										<li>We can call them as a second pass aggregation like runnin totals, percent of totals and so on.</li>
+										<li>We can call them as a second pass aggregation like runnin totals (accumulative sum), moving average, percent of totals and so on.</li>
 										<li>In other words, calculations are made based on the result that comes back from a data source.
 												Tableau issues query to the data source and returns a set of aggregated results.
 												Then, Tableau proceed with table calculation inside against that set of aggregated result.
@@ -515,6 +515,15 @@ WHERE Pn
 											- scope (table - everythin in the view, pane - subgroups, cell - row and column intersection),<br>
 											- layout (dimension in shelf - level of detail),<br>
 											- filters.
+										</li>
+										<li>Here is the example of getting percent differene of <code>SUM(Value)</code> for a particular month:
+											<br><br>
+											<img src="images/percent_diff.JPG">
+											<br>
+											- ...
+											<img src="images/percent_diff_numbers.JPG">
+											<br>
+											- as we can see percent differnce is yet another calculation on aggregated measure of <code>SUM(Val)</code>
 										</li>
 									</ul>
 
