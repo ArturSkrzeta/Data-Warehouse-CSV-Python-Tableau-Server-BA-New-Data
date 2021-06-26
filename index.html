@@ -529,8 +529,8 @@ WHERE Pn
 											<br>
 											- basic row level,<br>
 											- basic aggreagate,<br>
-											- Level Of Details,<br>
- 											- Table calculation.
+											- Table calculation.<br>
+											- Level Of Details.
 										</li>
 									</ul>
 
@@ -544,6 +544,19 @@ WHERE Pn
 											<img src="images/row_level_calculation.JPG">
 										</li>
 										<li>In the data view, we can see that those records that fulfills if condition gets [Value]. Those records that don't fulfil the condition (2019) get Nulls.</li>
+									</ul>
+
+									<h5>Basic aggregate:</h5>
+									<ul>
+										<li>Having below calculation:
+											<br>
+											<code>SUM(</code><br>
+											<code>IF YEAR([PO Sent to Supplier]) = 2021</code><br>
+											<code>THEN [Value]</code><br>
+											<code>END</code><br>
+											<code>)</code><br>
+											- we aggregate values from all records that fulfills the condition into a one record value of SUM().
+										</li>
 									</ul>
 
 									<h5>Table Calculation:</h5>
