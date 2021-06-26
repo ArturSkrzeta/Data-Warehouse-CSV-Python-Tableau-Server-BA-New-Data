@@ -534,6 +534,18 @@ WHERE Pn
 										</li>
 									</ul>
 
+									<h5>Basic row level calculation:</h5>
+									<ul>
+										<li>Having below calculation:
+											<br>
+											<code>if YEAR([PO Sent to Supplier]) = 2019 Then [Value] End</code>
+											<br>
+											- we can put it into the text shelf getting:
+											<img src="images/row_level_calculation.JPG">
+										</li>
+										<li>In the data view, we can see that those records that fulfills if condition gets [Value]. Those records that don't fulfil the condition (2019) get Nulls.</li>
+									</ul>
+
 									<h5>Table Calculation:</h5>
 									<ul>
 										<li>This is a kind of calculations thst is performed on aggregated measures that Tableau sees in the virtual table.</li>
