@@ -78,6 +78,41 @@
 											</li>
 										</ul>
 
+										<h5>ETL designing:</h5>
+										<ol>
+											<li>Operational db:
+												<br>
+												- we don't go to an operaional database directly as we don't want to weigh its performance down with analytical functions,<br>
+												- operaitonal db is only resposible for transactions saving which cosumes a lot of performance power.
+											</li>
+											<li>Flat files (CSV, JSON, XML):
+												<br>
+												- extracting data from operational db like a snapsot with additional meatadata like timestamp, system name etc.<br>
+												- extracting flat files and working with them ensures any operaional db perfomrance issue risk.
+											</li>
+											<li>Raw database:
+												<br>
+												- loading data as it is in the flat files withou any business logic applied yet,<br>
+												- the purpose is to be able to check if the data makes sense, for instance if the user name is ok, or if the zip-code has an expected format, if the commas is in a wrong place etc, <br>
+												- we perform some QA check on the fields matching, if some data don't fall into inappropriate db field,<br>
+												- here, we don't apply any transofrmation logic as we want to test pure data, otherwise it would be hard to debug some issues if they come from either the logic or data itslef,<br>
+												- we can move on with some logging here to track what files has been loaded, how many rows etc.
+											</li>
+											<li>Staging database:
+												<br>
+												- here we apply business logic and mapping to transform the data up to business requirements,<br>
+												- QA perfomed after transomration applied - we can be chekcing if the amount of distinct records is still as expected after applying some aggregating funcitons,<br>
+												- we can also here do some logging on how many records have been loaded, what stred procedures were run, if they were successfull or not, how long they work.
+											</li>
+											<li>Data Warehouse:
+												<br>
+												- final destination of ETL,<br>
+												- here we proceed ith further data analysi,<br>
+												- can be a back-end of Tableau dashboard.
+											</li>
+										</ol>
+
+
 										<h5>Data Lake:</h5>
 											<ul>
 												<li>Can store different forms of data:
