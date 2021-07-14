@@ -122,7 +122,7 @@
 										<h5>Additonal things for ETL:</h5>
 										<ul>
 											<li>Data QA,</li>
-											<li>Error hanlding and logging - tracking when etl fails, tracking why is that - it's important for the maintenence,</li>
+											<li>Error hanlding and logging - tracking when etl fails, tracking why is that - it's important for the maintenance,</li>
 											<li>Dashborad for logs visualization,</li>
 											<li>Data linage and data catalog - tracking fileds dependencies,</li>
 											<li>Metadata database - tracking pipelines dependencies.</li>
@@ -140,6 +140,10 @@
 													It may appear thet some records in prod are missing and we can thind the mission one in the raw table.
 													These kind of changes can be a result of accidental removal throughout the process.<br>
 												- Anomaly checks - test for data that doesn't make sense - f.e. average values is lower than minimum value.<br>
+											</li>
+											<li>QA for db is not as such developed and standardized as for app's code.
+													Most ofthen, in order to get app tested out, the testing tools and environments peel away dependency layers such as databases.
+													This means a traditional QA unit testing practices are designed to overlook the databases just to get focused on examination of the code itselft.
 											</li>
 										</ul>
 
