@@ -92,7 +92,7 @@
 											</li>
 											<li>Raw database:
 												<br>
-												- loading data as it is in the flat files withou any business logic applied yet,<br>
+												- loading data as it is in the flat files without any business logic applied yet,<br>
 												- the purpose is to be able to check if the data makes sense, for instance if the user name is ok, or if the zip-code has an expected format, if the commas is in a wrong place etc, <br>
 												- we perform some QA check on the fields matching, if some data don't fall into inappropriate db field,<br>
 												- here, we don't apply any transofrmation logic as we want to test pure data, otherwise it would be hard to debug some issues if they come from either the logic or data itslef,<br>
@@ -100,7 +100,7 @@
 											</li>
 											<li>Staging database:
 												<br>
-												- here we apply business logic and mapping to transform the data up to business requirements,<br>
+												- here we apply business logic, some mappings, tandarization, deduplicaiton, denormalization to transform the data up to business requirements,<br>
 												- QA perfomed after transomration applied - we can be chekcing if the amount of distinct records is still as expected after applying some aggregating funcitons,<br>
 												- we can also here do some logging on how many records have been loaded, what stred procedures were run, if they were successfull or not, how long they work.
 											</li>
@@ -110,6 +110,11 @@
 												- here we proceed with further data analysis,<br>
 												- can be a back-end of Tableau dashboard,<br>
 												- consists of fact tables and dimension tables.
+											</li>
+											<li>Here is the schema that shows the pahses of ETL:
+												<br>
+												<img src="images/etl_3_phases.JPG">
+												<span style="font-size:14px;">source: Seattle Data Guy</span>
 											</li>
 										</ol>
 
