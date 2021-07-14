@@ -125,6 +125,7 @@
 											<li>Error hanlding and logging - tracking when etl fails, tracking why is that - it's important for the maintenence,</li>
 											<li>Dashborad for logs visualization,</li>
 											<li>Data linage and data catalog - tracking fileds dependencies,</li>
+											<li>Metadata database - tracking pipelines dependencies.</li>
 										</ul>
 
 										<h5>QA on database:</h5>
@@ -132,6 +133,7 @@
 											<li>We may want to refer to previous data.</li>
 											<li>We can perform many checks simply with SELECT queries.</li>
 											<li>We can perform following checks:
+												<br>
 												- Categorical checks - when we know a field has a very specific value.<br>
 												- Null checks - depending if the fileds accept ones.<br>
 												- Aggregate checks - counting records both in raw table and prod table and comparing the results.
