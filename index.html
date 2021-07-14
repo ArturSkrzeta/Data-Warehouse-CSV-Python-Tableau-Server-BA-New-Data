@@ -102,6 +102,7 @@
 												<br>
 												- here we apply business logic, some mappings, tandarization, deduplicaiton, denormalization to transform the data up to business requirements,<br>
 												- QA perfomed after transomration applied - we can be chekcing if the amount of distinct records is still as expected after applying some aggregating funcitons,<br>
+												- basically, QA at this stage confirms if I can trust the data or not,<br>
 												- we can also here do some logging on how many records have been loaded, what stred procedures were run, if they were successfull or not, how long they work.
 											</li>
 											<li>Data Warehouse:
@@ -118,6 +119,27 @@
 											</li>
 										</ol>
 
+										<h5>Additonal things for ETL:</h5>
+										<ul>
+											<li>Data QA,</li>
+											<li>error hanlding and logging - tracking when etl fails, tracking why is that - it's important for the maintenence,</li>
+											<li>dashborad for logs visualization,</li>
+											<li>data linage and data catalog - tracking fileds dependencies,</li>
+										</ul>
+
+										<h5>QA on database:</h5>
+										<ul>
+											<li>We may want to refer to previous data.</li>
+											<li>We can perform many checks simply with SELECT queries.</li>
+											<li>We can perform following checks:
+												- Categorical checks - when we know a field has a very specific value.<br>
+												- Null checks - depending if the fileds accept ones.<br>
+												- Aggregate checks - counting records both in raw table and prod table and comparing the results.
+													It may appear thet some records in prod are missing and we can thind the mission one in the raw table.
+													These kind of changes can be a result of accidental removal throughout the process.<br>
+												- Anomaly checks - test for data that doesn't make sense - f.e. average values is lower than minimum value.<br>
+											</li>
+										</ul>
 
 										<h5>Data Lake:</h5>
 											<ul>
