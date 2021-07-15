@@ -174,6 +174,28 @@
 											<li>To ingest something means literally to take something in or absorb something. Data can be streamed in real time or ingested in batches.</li>
 										</ul>
 
+										<h5>Db vs DW</h5>
+										<ul>
+											<li>Db:
+												<br>
+												- mainly for transactional databases,<br>
+												- many inserts and updates or deletes,<br>
+												- for live apps,<br>
+												- normalized,<br>
+												- saves space,<br>
+												- limits possible performacnce and redundancy issues,<br>
+												- mainly for operational purposes.
+											</li>
+											<li>Dw:
+												<br>
+												- centralizes and standardizes all of the data from either company's or third party's applicatons,<br>
+												- for analytical purposes separating it from transactional systems in order to keep the performance,<br>
+												- consists of fact tables that groups all transactions,<br>
+												- consists of dimension tables with which we can break down transactions for example by category/regiona and sum up the sales,<br>
+												- used by analytical teams to quickly select the data without joining tables and understanding whole relationship logic.
+											</li>
+										</ul>
+
 										<h5>Fact Table and Dimension Table:</h5>
 										<ul>
 											<li>Fact table is a central table of the <b>star schema</b> in a data warehouse. It stores quantitative information for the analysis.</li>
