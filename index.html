@@ -507,6 +507,27 @@ WHERE Pn
 											</li>
 										</ul>
 
+										<h5>ETL issues:</h5>
+										<ul>
+											<li>Multiple data sources as multiple seources of thurth - > different analysis -> different total values.</li>
+											<li>Avoiding errors in excel:
+												<br>
+												- treat complex Excel sheet like a code - that means test when you make it, test it when you edit it and retest,<br>
+												- limit logic to as few places as possible - often it can be better to apply business logic in a single place like sql cor code layer other than adding more logic into Excel and Tableau
+											</li>
+											<li>Too many dashboards and not enough action
+												<br>
+												- why we build the dashboard and what are the decision it will drive,<br>
+												- if it's not driving decision then why we building them
+											</li>
+											<li>Low quality and incomplete data:
+												<br>
+												- automated QA system,<br>
+												- ingegration tests - making sure the logic inside te dashboard tool didn't change the initial data
+												- if the numbers that we can see on the dashboard are the same sa we can calculated in the query from the dataset,<br>
+												- -nit tests - level of data table itself.
+											</li>
+										</ul>
 									</header>
 								</div>
 							</section>
