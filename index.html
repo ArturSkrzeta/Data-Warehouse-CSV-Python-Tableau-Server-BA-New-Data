@@ -572,6 +572,26 @@ WHERE Pn
 											<li>Putting transformation logic outside of integration tools or not encapsulating it in a data catalog.</li>
 										</ul>
 
+										<h5>Database for stateful apps:</h5>
+										<ul>
+											<li>Stateless:
+												<br>
+												- Stateless microservices don’t store data on the host.<br>
+												- Stateless service can work using only pieces of information available in the request payload, or can acquire the required pieces of information from a dedicated stateful service, like a database.<br>
+												- The server doesn’t hold onto the state information between requests (doesn’t rely on information from earlier requests), the state can be held into an external service, like a database.<br>
+												- Different requests can be processed by different servers - any service instance can retrieve all service state necessary to execute a behavior from elsewhere enables resiliency, elasticity.<br>
+												- It scalee automatically and when your usebase is big and geographically distributed across the globe.
+											</li>
+											<li>Stateful:
+												<br>
+												- Stateful microservices require some kind of storage on the host who serves the requests.<br>
+												- The server processes requests based on the information relayed with each request and information stored from earlier requests.<br>
+												- The same server must be used to process all requests linked to the same state information, or the state information needs to be shared with all servers that need it.<br>
+												- Need to ensure some kind of scaling for your stateful services, and also plan for backups and rapid disaster recovery.
+											</li>
+											<span style="font-size:12px;">source: proud2becloud.com</span>
+										</ul>
+
 									</header>
 								</div>
 							</section>
