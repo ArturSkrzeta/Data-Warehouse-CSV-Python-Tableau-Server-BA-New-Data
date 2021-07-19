@@ -163,11 +163,15 @@
 											</li>
 										</ul>
 
-										<h5>Data catalog:</h5>
+										<!-- <h5>Data catalog:</h5>
 										<ul>
 											<li>search, previews, contes: relationship and lineage</li>
-											<li></li>
+										</ul> -->
 
+										<h5>Data governance:</h5>
+										<ul>
+											<li>Managing users accesss on who can access what on which level.</li>
+											<li>There is a so-called Data Steward who manages this.</li>
 										</ul>
 
 										<h5>QA on database:</h5>
@@ -552,6 +556,20 @@ WHERE Pn
 												- if the numbers that we can see on the dashboard are the same sa we can calculated in the query from the dataset,<br>
 												- unit tests - level of data table itself.
 											</li>
+										</ul>
+
+										<h5>Errors-prone practicies:</h5>
+										<ul>
+											<li>Not building reproducable, extendable, maintainable code.</li>
+											<li>Trusting data source accuraccy - a need for QA system.</li>
+											<li>Complex logic in one sql query - a need for breaking up into smaller staging steps.</li>
+											<li>Bulding things without a purpose:
+												<br>
+												- including no decision driven analysis/dashboards,<br>
+												- not understanding the bussines case and the business impact,<br>
+												- not understanding the user or developing not a user-friendly systems.
+											</li>
+											<li>Putting transformation logic outside of integration tools or not encapsulating it in a data catalog.</li>
 										</ul>
 
 									</header>
