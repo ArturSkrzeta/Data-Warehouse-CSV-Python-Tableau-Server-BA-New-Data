@@ -613,6 +613,14 @@ WHERE Pn
 											<span style="font-size:12px;">source: looker.com/</span>
 										</ul>
 
+										<h5>Data pipeline on cloud:</h5>
+										<ol>
+											<li>SAP scheduler job runs ABAP code to extract data locally into the server.</li>
+											<li>OpenFT or SFTP script takes the flat files and transfer them into the target system (AWS S3 bucket).</li>
+											<li>Amazon SNS (simple nofitication service) fires events of new files coming in.</li>
+											<li>Event triggers snowpiplne ETL which applies the transformation logic and feeds the snowflake data tables.</li>
+											<li>Table integration with snowflake server ensures the data on the dashboard are up to date.</li>
+										</ol>
 									</header>
 								</div>
 							</section>
