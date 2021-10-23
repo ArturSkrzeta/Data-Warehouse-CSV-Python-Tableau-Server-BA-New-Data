@@ -65,6 +65,7 @@
 											<li>Combining data from different sources and providing users with unified view of them.</li>
 											<li>It integrates data from heterogeneous database systems and transforms it into a single coherent data store.</li>
 											<li>We can find it helpful in data mining and business analysis.</li>
+											<li>With the data integration, the sources may be entirely within your own systems. On the other hand, data ingestion suggests that at least part of the data is pulled from another location (e.g. a website, SaaS application, or external database).</li>
 										</ul>
 
 										<h5>ETL:</h5>
@@ -91,13 +92,13 @@
 										<ol>
 											<li>Operational db:
 												<br>
-												- we don't go to an operaional database directly as we don't want to weigh its performance down with analytical functions,<br>
+												- we don't go to an operaional database directly, as we don't want to weigh its performance down with analytical functions,<br>
 												- operaitonal db is only resposible for transactions saving which cosumes a lot of performance power.
 											</li>
 											<li>Flat files (CSV, JSON, XML):
 												<br>
-												- extracting data from operational db like a snapsot with additional meatadata like timestamp, system name etc.<br>
-												- extracting flat files and working with them ensures any operaional db perfomrance issue risk.
+												- extracting data from operational db like a snapshot with some additional meatadata like timestamp, system name etc.<br>
+												- extracting flat files and working on them eliminates any operaional db perfomrance issue risks.
 											</li>
 											<li>Raw database:
 												<br>
@@ -109,8 +110,8 @@
 											</li>
 											<li>Staging database:
 												<br>
-												- here we apply business logic, some mappings, tandarization, deduplicaiton, denormalization to transform the data up to business requirements,<br>
-												- QA perfomed after transomration applied - we can be chekcing if the amount of distinct records is still as expected after applying some aggregating funcitons,<br>
+												- here we apply business logic, some mappings, standarization, deduplicaiton, denormalization to transform the data up to business requirements,<br>
+												- QA perfomed after appling transomration - we can be chekcing if the amount of distinct records is still as expected after applying some aggregating funcitons,<br>
 												- basically, QA at this stage confirms if I can trust the data or not,<br>
 												- we can also here do some logging on how many records have been loaded, what stred procedures were run, if they were successfull or not, how long they work.
 											</li>
@@ -145,6 +146,15 @@
 											<li>Metadata database:
 												<br>
 												 - tracking pipelines dependencies.
+											 </li>
+											 <li>Types of transformation:
+												 <br>
+													- Cleansing: removing information that is inaccurate, irrelevant, or incomplete.<br>
+													- Deduplication: deleting duplicate copies of information.<br>
+													- Joining: combining two or more database tables that share a matching column.<br>
+													- Splitting: dividing a single database table into two or more tables.<br>
+													- Aggregation: creating new data by performing various calculations (e.g. summing up the revenue from each sales representative on a team).<br>
+													- Validation: ensuring that the data is accurate, high-quality, and using a standard data type.
 											 </li>
 										</ul>
 
@@ -219,8 +229,16 @@
 
 										<h5>Data Ingestion:</h5>
 										<ul>
-											<li>It's the process of obtaining and importing data for immediate use or long-term storage in a database.</li>
-											<li>To ingest something means literally to take something in or absorb something. Data can be streamed in real time or ingested in batches.</li>
+											<li>Any process that transports data from one location to another so that it can be taken up for further processing or analysis.</li>
+											<li>To ingest something means literally to take something in or absorb something located outside your internal systems.
+												Data can be streamed in real time or ingested in batches:
+												<br>
+												- <b>streaming data ingestion</b> - data is being loaded into target locatrion almost immediately it appears in the systems.
+												For example manula inputs from the user utilizing the write-back function in the Tableau dashboard.
+												Records are entered into target table right away and can be undergo the analysis or can be displayed on another dashboards.<br>
+												- >b>batch data ingestion</b> - data is collected and transferred in batches at regular intervals.
+												For example extracting flat files from SAP systems and loading them using coded pipelines.
+											</li>
 										</ul>
 
 										<h5>Db vs DW</h5>
