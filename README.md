@@ -39,3 +39,32 @@
       <li>...</li>
     </ul>
 <ul>
+  
+  
+  
+  Example: Create Context Filters
+This example walks you through how to create a context filter. First you’ll filter a view to show the top 10 products by sales. Then you’ll create a context filter on product category so you can see the top 10 furniture products.
+
+Use the Sample - Superstore data source to create the initial view shown below. The view shows the sales for all sub-categories, sorted with the highest sale at the top.
+
+
+
+Now create a Top 10 filter to just show the top selling products. You can create this filter by dragging the Sub-Category field to the Filters shelf. In the Filter dialog box, switch to the Top tab and define a filter that is Top 10 by Sum of Sales. See Filter Data from Your Views(Link opens in a new window) to learn more about defining a Top N filter.
+
+
+
+When you click OK, you’ll see that the view is filtered to show the top 10 product sub-categories in terms of sales.
+
+
+
+Now, let’s add another filter to show only furniture products. Drag the Category field to the Filters shelf and select only Furniture. When finished, click OK.
+
+The view is filtered but instead of 10 products, it now shows 3. This is because by default all filters are evaluated separately and the view shows the intersection of the results. So this view shows that three of the top 10 overall products are furniture products.
+
+
+
+To find out what the top 10 furniture products are we need to make the Category filter a context filter. Right-click the field on the Filters shelf and select Add to Context.
+
+The filter is marked as a context filter and the view updates to show the top four furniture products. Why not 10? Because only four of the sub-categories contain furniture. But we now know that the Top 10 filter is being evaluated on the results of that context.
+
+
