@@ -191,11 +191,13 @@
 											<li>We can perform following checks:
 												<br>
 												- Categorical checks - when we know a field has a very specific value.<br>
-												- Null checks - depending if the fileds accept ones.<br>
+												- Null checks - depending if the fileds accept ones. If there are nulls/blanks in a numeric column, we may want to fill it up with an average value.<br>
 												- Aggregate checks - counting records both in raw table and prod table and comparing the results.
-													It may appear thet some records in prod are missing and we can thind the mission one in the raw table.
+													It may appear thet some records in prod are missing and we can find the missing one in the raw table.
 													These kind of changes can be a result of accidental removal throughout the process.<br>
 												- Anomaly checks - test for data that doesn't make sense - f.e. average values is lower than minimum value.<br>
+												- Outlier checks - detecting numeric values that far away from an aversage.<br>
+												- Valudation checks - string/dates format.
 											</li>
 											<li>QA for db is not as such developed and standardized as for app's code.
 													Most ofthen, in order to get app tested out, the testing tools and environments peel away dependency layers such as databases.
@@ -213,8 +215,9 @@
 													- unstructured data (emails, documents, PDFs),<br>
 													- binary data (images, audio, video).
 												 </li>
+												 <li>We put a structure on a data when quering it (ELT process).</li>
 												 <li>Can be both established on-premise or in the cloud.</li>
-												 <li>The disadvantage can be that usees may find the data uncategrized with no context what the data represents.</li>
+												 <li>The disadvantage can be that user may find the data uncategrized with no context what the data represents.</li>
 												 <li>There is also a data swamp which is unmanagable and inaccessible or low-value-providing data lake.</li>
 												 <li>With data lake came in, the emphasis has been switched from data lineage to data catalog.</li>
 											</ul>
