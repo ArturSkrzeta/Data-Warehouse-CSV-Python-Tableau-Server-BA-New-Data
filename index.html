@@ -451,7 +451,8 @@ Zielinska:001; Wrona:002,004; Kowalski:003;
 													We fetch data fast and only that data we need.
 													On the other hand, any record operations are very slow in a columnar database.
 											</li>
-											<li>In columanr storage,data is being divided on micropartitions with specific metadata assigned.
+											<li>In columanr storage data is being divided on micropartitions with specific metadata assigned.
+												Thanks to metadata db engine knows more or less at what place of the disk a specific range of data's id is being kept.
 												This is why we can fetch entire row using even though we work with a columnar storage.
 											</li>
 											<li>Becasue fact tables in data warehouses are often long (many rows) and wide (many columns) and their data doesn't change while OLAP, they are being stored in te columnar form.</li>
