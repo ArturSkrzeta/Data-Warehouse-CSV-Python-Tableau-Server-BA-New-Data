@@ -672,7 +672,8 @@ WHERE Pn
 											<li>OpenFT or SFTP script takes the flat files and transfer them into the target system (AWS S3 bucket).</li>
 											<li>Amazon SNS (simple nofitication service) fires events of new files coming in.</li>
 											<li>Event triggers snowpiplne ETL which applies the transformation logic and feeds the snowflake data tables.</li>
-											<li>Table integration with snowflake server ensures the data on the dashboard are up to date.</li>
+											<li>There are materialized views of target table in the access schea being integrated with Snowflake server ensures the data on the dashboard are up to date (live connection to the data source).</li>
+
 										</ol>
 									</header>
 								</div>
