@@ -158,6 +158,33 @@
 											 </li>
 										</ul>
 
+										<table>
+											<tr>
+												<th>ETL</th>
+												<th>ELT</th>
+											</tr>
+											<tr>
+												<td>Extracting data from the source system followed by applying transofrmation according to the business logic and loading to the DW where it can be consumed by end users or reporting users.</td>
+												<td>Exracting and loading into more permanent location (usually data lake) - over there tables continue to grow with each run. Data lake play a historical reference for all data (no limits on how much we can store).</td>
+											</tr>
+											<tr>
+												<td>Transform process will only run against data that is extracted during the same run.</td>
+												<td>Transformation applied at the end to create custom data models.</td>
+											</tr>
+											<tr>
+												<td>Before transfomration there is one more staging layer (temporary storage)</td>
+												<td>Extracted data is not being cleaned each time - we can extract the data as many times as we want and run the transformation at any different time.</td>
+											</tr>
+											<tr>
+												<td>All of the steps needs to be completed at the same run.</td>
+												<td>Instead of relying on the staging table for the latest data - we can instead apply filters on the new larger data set within the transform logic.</td>
+											</tr>
+											<tr>
+												<td></td>
+												<td>EL (fivetran, stitch, kafka, aws kinesis), T (dbt, AWS athena)</td>
+											</tr>
+										</table>
+
 										<h5>Data Lineage:</h5>
 										<ul>
 									 		<li>Records the whole life cycle of data - the data flow from the source to the consumption alogn with all of the transformations between.</li>
@@ -193,6 +220,7 @@
 												- Categorical checks - when we know a field has a very specific value.<br>
 												- Null checks - depending if the fileds accept ones. If there are nulls/blanks in a numeric column, we may want to fill it up with an average value.<br>
 												- Aggregate checks - counting records both in raw table and prod table and comparing the results.
+													We can do these checks agains pivot table in excel or with sql statement aggreagring as the same fileds as dashboard.
 													It may appear thet some records in prod are missing and we can find the missing one in the raw table.
 													These kind of changes can be a result of accidental removal throughout the process.<br>
 												- Anomaly checks - test for data that doesn't make sense - f.e. average values is lower than minimum value.<br>
@@ -451,9 +479,9 @@ Zielinska:001; Wrona:002,004; Kowalski:003;
 													We fetch data fast and only that data we need.
 													On the other hand, any record operations are very slow in a columnar database.
 											</li>
-											<li>In columanr storage data is being divided on micropartitions with specific metadata assigned.
+											<li>In columanr storage data is being divided into micropartitions with specific metadata assigned.
 												Thanks to metadata db engine knows more or less at what place of the disk a specific range of data's id is being kept.
-												This is why we can fetch entire row using even though we work with a columnar storage.
+												This is why we can fetch entire row even though we work with a columnar storage.
 											</li>
 											<li>Becasue fact tables in data warehouses are often long (many rows) and wide (many columns) and their data doesn't change while OLAP, they are being stored in te columnar form.</li>
 										</ul>
